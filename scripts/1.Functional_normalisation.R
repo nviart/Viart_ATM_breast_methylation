@@ -17,7 +17,7 @@
 #DescriptorFileName2 = "Annotations_13.02.2024_Australia_ABCFR_MCCS.csv"
 
 # Loading of customised functions and path to data to use
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
+source(file.path(getwd(), "config.R"))
 
 # Activate renv project
 renv::activate(project = renv.path)
@@ -306,7 +306,7 @@ library(IlluminaHumanMethylationEPICanno.ilm10b5.hg38)
 #annotation(rgSet)["array"] = "IlluminaHumanMethylationEPIC"
 
 # Load the new manifest file
-mf="/data/users/nviart/ATM_Analysis/data/methylation/infinium-methylationepic-v-1-0-b5-manifest-file.csv"
+mf=manifest.path
 annEPIC <- readmanifest(mf)
 annEPIC <- annEPIC$assay
 
@@ -388,11 +388,12 @@ if (probeFiltering)
 {
     # Filtrage des sondes avec des SNP et dans des régions cross-réactives
     ## cross-reactive/non-specific
-    cross.react <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/48639-non-specific-probes-Illumina450k.csv', head = T, as.is = T)
+    cross.react <- read.csv(file.path(path.filters, '48639-non-specific-probes-Illumina450k.csv'), head = T, as.is = T)
+    
     cross.react.probes <- as.character(cross.react$TargetID)
 
     ## BOWTIE2 multi-mapped
-    multi.map <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/HumanMethylation450_15017482_v.1.1_hg19_bowtie_multimap.txt', head = F, as.is = T)
+    multi.map <- read.csv(file.path(path.filter, 'HumanMethylation450_15017482_v.1.1_hg19_bowtie_multimap.txt'), head = F, as.is = T)
     multi.map.probes <- as.character(multi.map$V1)
 
     ## determine unique probes
@@ -413,10 +414,10 @@ if (probeFiltering)
     rm(multi.map, multi.map.probes, cross.react, cross.react.probes, filter.probes)
 
     ## probes from Pidsley 2016 (EPIC)
-    epic.cross1 <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/13059_2016_1066_MOESM1_ESM.csv', head = T)
-    epic.variants1 <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/13059_2016_1066_MOESM4_ESM.csv', head = T)
-    epic.variants2 <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/13059_2016_1066_MOESM5_ESM.csv', head = T)
-    epic.variants3 <- read.csv('/data/users/nviart/ATM_Analysis/data/methylation/Probes_filtering/13059_2016_1066_MOESM6_ESM.csv', head = T)
+    epic.cross1 <- read.csv(file.path(path.filters, '13059_2016_1066_MOESM1_ESM.csv'), head = T)
+    epic.variants1 <- read.csv(file.path(path.filters, '13059_2016_1066_MOESM4_ESM.csv'), head = T)
+    epic.variants2 <- read.csv(file.path(path.filters, '13059_2016_1066_MOESM5_ESM.csv'), head = T)
+    epic.variants3 <- read.csv(file.path(path.filters, '13059_2016_1066_MOESM6_ESM.csv'), head = T)
     ## additional filter probes
     epic.add.probes <- c(as.character(epic.cross1$X), as.character(epic.variants1$PROBE), as.character(epic.variants2$PROBE),
                          as.character(epic.variants3$PROBE))

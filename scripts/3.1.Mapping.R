@@ -15,10 +15,10 @@ print("beginning of the script")
 #---- Script du 18.09.2023 ----#
 #---- Script minimalisé afin de séparer le mapping des analyses différentielles  ----#
 
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
+source(file.path(getwd(), "config.R"))
 
 # Activate renv project
-renv::activate(project = "~/ATM_Analysis/svn/analyse/script/")
+renv::activate(project = renv.path)
 
 # Lien vers les annotations et les Beta values
 #Origin <- "/data/users/nviart/ATM_Analysis/svn/analyse/results/FinalMethylation/"
@@ -52,7 +52,7 @@ annotations <- read.csv(file.path(DirFiles, "Annotations.csv"), row.names = 1)
 
 # Chargement des fonctions customisées
 if (TCGA == FALSE){
-    source(file = file.path(function.path, "functions.R"))
+    source(file.path(getwd(), "functions.R"))
 }
 
 library("biomaRt")

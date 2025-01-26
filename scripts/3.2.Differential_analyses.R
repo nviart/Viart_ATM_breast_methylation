@@ -9,7 +9,7 @@
 
 print("beginning of the script")
 
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
+source(file.path(getwd(), "config.R"))
 
 # Activate renv project
 renv::activate(project = renv.path)
@@ -52,7 +52,7 @@ annotations[["ATM_LOH"]]  <- ifelse(annotations$Sample_Name %in% ATM.LOH.Yes, "L
 
 
 # Chargement des fonctions customisées
-source(file = file.path(function.path, "functions.R"))
+source(file.path(getwd(), "functions.R"))
 
 
 OutFilesAnno = file.path(Origin, "matrices/Annotations/")

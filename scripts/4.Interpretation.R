@@ -58,7 +58,7 @@ files <- list.files(path = ".", pattern="_DMPs.csv", recursive = FALSE)
 # Read the annotation file
 annotations <- read.csv(file.path(DirMatrices, "Annotations.csv"), row.names = 1)
 
-source(file = file.path(function.path, "functions.R"))
+source(file.path(getwd(), "functions.R"))
 
 
 # create data frame with 0 rows and 5 columns

@@ -7,7 +7,7 @@
 #PBS -N Exploratory_analysis
 #PBS -j oe
 
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
+source(file.path(getwd(), "config.R"))
 
 # Activate renv project
 renv::activate(project = renv.path)
@@ -82,7 +82,7 @@ annotations$Date_diag <- as.numeric(annotations$Date_diag)
 annotations$ER_status <- as.character(annotations$ER_status)
 
 # Chargement des fonctions customisées
-source(file = file.path(function.path, "functions.R"))
+source(file = file.path(getwd(), "functions.R"))
 
 print("data loaded")
 

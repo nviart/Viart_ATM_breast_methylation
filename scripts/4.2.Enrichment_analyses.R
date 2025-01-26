@@ -9,9 +9,9 @@
 
 
 # Source the file that will find data to use
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
+source(file.path(getwd(), "config.R"))
 renv::activate(project = renv.path)
-source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/4.Interpretation.R")
+source(file.path(getwd(), "4.Interpretation.R"))
 
 #load(file.path(Origin, "/matrices/Beta_Funnorm_Normalisation.RData"))
 #load(file.path(Origin, "/matrices/M_Funnorm_Normalisation.RData"))
