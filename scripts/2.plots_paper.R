@@ -10,7 +10,7 @@
 source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
 
 # Activate renv project
-renv::activate(project = "~/ATM_Analysis/svn/analyse/script/")
+renv::activate(project = renv.path)
 
 # Lien vers les annotations initiales (avec tous les échantillons)
 InitialAnnotationFileInitialAnnotationFile = "~/ATM_Analysis/data/methylation/Annotations_30.11.23_Curie.csv"

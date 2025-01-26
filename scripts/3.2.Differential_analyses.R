@@ -12,7 +12,7 @@ print("beginning of the script")
 source("~/ATM_Analysis/svn/analyse/script/methylation/MethPipeline/config.R")
 
 # Activate renv project
-renv::activate(project = "~/ATM_Analysis/svn/analyse/script/")
+renv::activate(project = renv.path)
 
 
 #library("optparse")

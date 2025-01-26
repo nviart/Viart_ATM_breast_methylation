@@ -13,6 +13,7 @@
 #---- Script mis à jour afin de réaliser les analyses d'enrichissement sur les nouveaux fichiers sans le duplicat (après normalisation Functional) ----#
 
 
+
 # Trouver le dossier contenant le résultat des différentes comparaisons
 DirDAGW <- file.path(Origin, "differentialAnalysis/GenomeWide/")
 # Fichier d'annotation des gènes et promoteurs
@@ -27,7 +28,7 @@ th.logFC <- 1
 OutFiles1 = file.path(Origin, "Interpretation/")
 
 # ACtivate renv project
-renv::activate(project = "~/ATM_Analysis/svn/analyse/script/")
+renv::activate(project = renv.path)
 
 if(!dir.exists(OutFiles1))
 {
