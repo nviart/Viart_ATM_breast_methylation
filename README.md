@@ -37,6 +37,8 @@ The preprocessing pipeline used in the paper Viart *et al.* (2025) is described 
 <img src="pipeline_git.png" alt="drawing" height="800"/>
   
 The script `1.Functional_normalisation.R` goes from the loading of the data to the matrix of M values.
+Then, the script `2.Mapping.R` allows to map the M values to promoters, genes and CpG Islands using the bed files indicated in the config.R file.
+
   
 
 
