@@ -28,4 +28,6 @@ You have to indicate:
 * `path.filters`: path to the files downloaded from https://github.com/sirselim/illumina450k_filtering
 
 ## 5- Run the pipeline
-The preprocessing pipeline is executed thanks to the script 1.Functional_normalisation.R. The chart bellow describe the different steps of this pipeline ![](pipeline_git.png){ width: 200px; }
+The preprocessing pipeline is executed thanks to the script 1.Functional_normalisation.R. The chart bellow describe the different steps of this pipeline 
+<img src="pipeline_git.png" alt="drawing" width="200"/>
+
