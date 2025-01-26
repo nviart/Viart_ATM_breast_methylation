@@ -28,7 +28,15 @@ You have to indicate:
 * `path.filters`: path to the files downloaded from https://github.com/sirselim/illumina450k_filtering
 
 ## 5- Run the pipeline
-The preprocessing pipeline is executed thanks to the script 1.Functional_normalisation.R. The chart bellow describe the different steps of this pipeline. 
+[!NOTE]
+All the scripts are made to run on Torque PBS scheduler. You have to adapt the head of each script according to your environment.
+  
+### 5.1- Preprocessing pipeline
+The preprocessing pipeline used in the paper Viart *et al.* (2025) is described in the chart below:
   
 <img src="pipeline_git.png" alt="drawing" height="800"/>
+  
+The script `1.Functional_normalisation.R` goes from the loading of the data to the matrix of M values.
+  
+
 
