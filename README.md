@@ -27,3 +27,5 @@ You have to indicate:
 * `probeFiltering`: boolean, if you want to filter the probes described in Pidsley *et al.* (2016) 
 * `path.filters`: path to the files downloaded from https://github.com/sirselim/illumina450k_filtering
 
+## 5- Run the pipeline
+The preprocessing pipeline is executed thanks to the script 1.Functional_normalisation.R. The chart bellow describe the different steps of this pipeline ![](pipeline_git.png)
