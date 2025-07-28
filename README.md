@@ -1,6 +1,6 @@
 #  Preprocessing pipeline of methylation data (Illumina 450K and EPIC arrays)
 
-This repository contains the code used for the paper Viart *et al.* (2025) entitled "Breast tumors from ATM pathogenic variant carriers display a specific genome-wide DNA methylation profile"
+This repository contains the code used for the paper Viart N. M. *et al.* (2025) entitled "Breast tumors from ATM pathogenic variant carriers display a specific genome-wide DNA methylation profile" published in Breast Cancer Research (https://doi.org/10.1186/s13058-025-01988-w)
 
 ## 1- Clone the repository
 To be able to use the code of this repository, you have first to clone the repository with the command:
